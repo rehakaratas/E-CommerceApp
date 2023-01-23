@@ -1,0 +1,55 @@
+﻿@model List<E_CommerceApp.Application.Models.VMs.ListOfManagerVM>
+
+@{
+    ViewData["Title"] = "ListOfManagers";
+}
+
+<h1>ListOfManagers</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Image
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                Roles
+            </th>
+            <th>
+                Functions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@item.ImagePath" height="100" width="100" >
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Surname
+                </td>
+                <td>
+                    @item.Roles.ToString();
+                </td>
+                <td>
+                    <a class="btn btn-success" asp-action="UpdateManager" asp-area="Admin" asp-controller="Manager" asp-route-id="@item.Id">Edit</a> |
+                    <a class="btn btn-danger" asp-action="DeleteManager" asp-area="Admin" asp-controller="Manager" asp-route-id="@item.Id">Delete</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

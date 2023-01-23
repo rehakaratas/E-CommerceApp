@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>E_CommerceApp.Application</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extensions\FluentValidation\**" />
+    <EmbeddedResource Remove="Extensions\FluentValidation\**" />
+    <None Remove="Extensions\FluentValidation\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\E-CommerceApp.Domain\E-CommerceApp.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\E-CommerceApp.Infrastructure\E-CommerceApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
